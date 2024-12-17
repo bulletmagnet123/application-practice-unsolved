@@ -10,8 +10,15 @@
 
 
 export function find(array, callback) {
-  // Your code goes here...
-  
+    // Iterate over the array
+    for (let i = 0; i < array.length; i++) {
+        // If the callback returns true for the current element, return that element
+        if (callback(array[i], i, array)) {
+            return array[i];
+        }
+    }
+    // If no element satisfies the condition, return undefined
+    return undefined;
 }
 
 

@@ -5,10 +5,15 @@ import { data } from "../data/data";
 // Return example: ['name1', 'name2', ... , 'nameN']
 
 export function getPlanetsWithLowGravity(data) {
-  // Your code goes here...
+    const planets = data.planets; // Access the planets array
+
+    // Use the filter method to get planets with gravity less than 10
+    const lowGravityPlanets = planets
+        .filter((planet) => planet.gravity < 10) // Filter planets with gravity less than 10
+        .map((planet) => planet.name); // Map to extract the names of the filtered planets
+
+    return lowGravityPlanets; // Return the array of planet names
 }
-
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-4"
